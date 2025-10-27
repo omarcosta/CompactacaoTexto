@@ -3,8 +3,8 @@ texto_original = "" # Variável para armazenar o texto original lido do arquivo
 texto_comprimido = "" # Variável para armazenar o texto comprimido
 texto_descompactado = "" # Variável para armazenar o texto descompactado
 tag = "#"  # Tag que marca a supressão de brancos, conforme Teoria.pdf 
-caminho_arquivo_original = "brancos/arquivo.txt"  # Caminho do arquivo que será lido [cite: 2204, 2236]
-caminho_arquivo_compactado = "brancos/compactado_arquivo.txt" # Caminho do arquivo que será gravado [cite: 2205, 2236]
+caminho_arquivo_original = "brancos/arquivo.txt"  # Caminho do arquivo que será lido 
+caminho_arquivo_compactado = "brancos/compactado_arquivo.txt" # Caminho do arquivo que será gravado 
 caminho_arquivo_descompactado = "brancos/descompactado_arquivo.txt" # Caminho do arquivo que será descompactado
 i = 0 # Variável de índice principal para percorrer os textos
 contador = 0 # Contador para rastrear o número de repetições, iniciando em 0
@@ -13,11 +13,11 @@ contador = 0 # Contador para rastrear o número de repetições, iniciando em 0
     # WITH abre o arquivo em modo de leitura
     # "r" significa read (apenas ler)
     # encoding utf-8 (reconhece o texto no padrão de escrita Brasil)
-with open(caminho_arquivo_original, "r", encoding="utf-8") as f: # Abre o arquivo de origem [cite: 2204]
+with open(caminho_arquivo_original, "r", encoding="utf-8") as f: # Abre o arquivo de origem 
     texto_original = f.read() # O texto original é definido como a leitura do arquivo
 print(f"Lido arquivo original com {len(texto_original)} caracteres.") # Mensagem de feedback
 
-# 3) COMPRESSÃO DO TEXTO (Técnica: Supressão de Brancos) [cite: 96, 104]
+# 3) COMPRESSÃO DO TEXTO (Técnica: Supressão de Brancos) 
 print("Iniciando compressão de brancos...") # Mensagem de feedback
 i = 0 # Zera o índice principal para percorrer o texto original
 while i < len(texto_original): # Loop que percorre toda a string original
@@ -46,7 +46,7 @@ print("Compressão de brancos finalizada.") # Mensagem de feedback
 
 # 4) GRAVAÇÃO DO ARQUIVO COMPACTADO
     # "w" significa write (escrever), apagando o que existia antes
-with open(caminho_arquivo_compactado, "w", encoding="utf-8") as f: # Abre o arquivo de destino [cite: 2205]
+with open(caminho_arquivo_compactado, "w", encoding="utf-8") as f: # Abre o arquivo de destino 
     f.write(texto_comprimido) # Salva o texto comprimido no arquivo especificado
 print(f"Arquivo '{caminho_arquivo_compactado}' gravado com {len(texto_comprimido)} caracteres.") # Mensagem de feedback
 
